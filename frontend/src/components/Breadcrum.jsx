@@ -21,7 +21,7 @@ const Breadcrum = (props) => {
                     <ChevronRightIcon className="flex-shrink-0 h-5 w-5 text-gray-blue" aria-hidden="true" />
                 </li>
                 <li>
-                    <Link><span className="text-gray-blue">Shop</span></Link>
+                    <Link to="/shop"><span className="text-gray-blue">Shop</span></Link>
                 </li>
                 <li>
                     <Link><FontAwesomeIcon icon={faAngleRight} className="mx-2 text-gray-blue" /></Link>
