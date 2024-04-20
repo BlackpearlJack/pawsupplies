@@ -27,7 +27,7 @@ const Navbar = () => {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+            <span className="sr-only">Pawsupplies</span>
             <img className="h-12 w-auto rounded-full" src={images.logo} alt="" />
           </Link>
         </div>
@@ -42,16 +42,16 @@ const Navbar = () => {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Link to="/" className="text-sm font-semibold leading-6 text-gray-blue">
+          <Link to="/" className="text-sm font-semibold leading-6 hover:text-light-grayish-red text-gray-blue">
             Shop
           </Link>          
-          <Link to="/cats" className="text-sm font-semibold leading-6 text-gray-blue">
+          <Link to="/cats" className="text-sm font-semibold leading-6 hover:text-light-grayish-red text-gray-blue">
             Cats
           </Link>
-          <Link to="/dogs" className="text-sm font-semibold leading-6 text-gray-blue">
+          <Link to="/dogs" className="text-sm font-semibold leading-6 hover:text-light-grayish-red text-gray-blue">
             Dogs
           </Link>
-          <Link to="/about" className="text-sm font-semibold leading-6 text-gray-blue">
+          <Link to="/about" className="text-sm font-semibold leading-6 hover:text-light-grayish-red text-gray-blue">
             Pawsupplies
           </Link>
         </Popover.Group>

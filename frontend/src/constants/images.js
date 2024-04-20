@@ -5,6 +5,8 @@ import summer_scratcher from '../assets/product_7.jpeg'
 import spring_scratcher from '../assets/product_8.jpeg'
 import cat_banner from '../assets/cat_banner.png'
 import dog_banner from '../assets/dog_banner.png'
+import about from '../assets/about_img.jpeg'
+import login_image from '../assets/login.png'
 
 const images = {
     logo,
@@ -14,6 +16,8 @@ const images = {
     spring_scratcher,
     cat_banner,
     dog_banner,
+    about,
+    login_image
 
 };
 

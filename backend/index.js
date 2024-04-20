@@ -11,7 +11,6 @@ const { type } = require('os');
 
 app.use(express.json());
 app.use(cors());
-
 // Database connection with MongoDB
 mongoose.connect("mongodb+srv://lestercarlyle:N1kl%40us99@cluster0.c2zbmo6.mongodb.net/pawsupplies");
 

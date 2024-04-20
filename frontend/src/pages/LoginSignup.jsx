@@ -1,119 +1,64 @@
-import { useState } from "react";
 import images from "../constants/images";
 
-const Signup = () => {
-  // State to manage checkbox
-  const [isChecked, setIsChecked] = useState(false);
-
-  // Function to handle checkbox change
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
-  };
-
-  // Function to handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (isChecked) {
-      // Process form submission
-      console.log("Form submitted!");
-    } else {
-      // Show error message or prevent submission
-      console.log("Please accept the terms and conditions.");
-    }
-  };
-
+const Login = () => {
   return (
-    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <img
-          className="mx-auto h-24 w-auto rounded-full"
-          src={images.logo}
-          alt="Your Company"
-        />
-        <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-          Sign up for an account
-        </h2>
+    <div className="w-full h-screen flex items-start">
+      <div className="sm:block hidden relative w-full md:w-1/2 h-full flex-col">
+        <div className="absolute top-[20%] left-[10%] flex flex-col">
+          <h1 className="text-4xl text-light-grayish-red font-extrabold my-2">One-Stop Shop for Pet Essentials</h1>
+          <p className="text-base text-light-grayish-red font-normal">Looking for top-quality products to pamper your furry friends? Look no further!</p>
+        </div>
+        <img src={images.login_image} alt="" className="hidden md:block w-full h-full object-cover" />
       </div>
 
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form className="space-y-6" onSubmit={handleSubmit}>
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium leading-6 text-gray-900"
-            >
-              Email address
-            </label>
-            <div className="mt-2">
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-              />
-            </div>
+      <div className="w-full md:w-1/2 h-full bg-[#fffff] items-center flex flex-col p-8 md:p-20 justify-between">
+        <h1 className="w-full max-w-[500px] mx-auto text-xl text-gray-blue font-semibold">Pawsupplies</h1>
+
+        <div className="w-full flex flex-col max-w-[500px]">
+          <div className="w-full flex flex-col mb-8 md:mb-10">
+            <h3 className="text-2xl text-dark-magenta font-semibold mb-2">Login</h3>
+            <p className="text-sm mb-2 text-dark-magenta">Welcome back! Please Enter your Details</p>
           </div>
 
-          <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium leading-6 text-gray-900"
-            >
-              Password
-            </label>
-            <div className="mt-2">
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="new-password"
-                required
-                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-              />
-            </div>
-          </div>
-
-          <div className="flex items-center">
+          <div className="w-full flex flex-col mb-8 md:mb-0">
             <input
-              id="terms"
-              name="terms"
-              type="checkbox"
-              className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-              checked={isChecked}
-              onChange={handleCheckboxChange}
+              type="email"
+              placeholder="Email"
+              className="w-full text-dark-magenta py-2 my-2 bg-none border-b border-gray-blue outline-none focus:outline-none"
             />
-            <label
-              htmlFor="terms"
-              className="ml-2 block text-sm leading-5 text-gray-900"
-            >
-              I accept the terms and conditions
-            </label>
+
+            <input
+              type="password"
+              placeholder="Password"
+              className="w-full text-dark-magenta py-2 my-2 bg-none border-b border-gray-blue outline-none focus:outline-none"
+            />
           </div>
 
-          <div>
-            <button
-              type="submit"
-              className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              Sign up
+          <div className="w-full flex items-center justify-between mb-8 md:mb-0">
+            <div className="w-full flex items-center">
+              <input type="checkbox" className="w-4 h-4 mr-2" />
+              <p className="text-sm text-dark-magenta">I agree to the terms and conditions</p>
+            </div>
+
+            <p className="text-sm text-dark-magenta hover:text-magenta font-medium whitespace-nowrap cursor-pointer underline underline-offset-2">Forgot Password ?</p>
+          </div>
+
+          <div className="w-full flex flex-col items-center">
+            <button className="w-full md:w-full my-2 font-semibold text-[white] bg-dark-green rounded-md p-4 text-center flex items-center justify-center">
+              Login
+            </button>
+            <button className="w-full md:w-full my-2 font-semibold text-gray-blue border-2 border-dark-magenta bg-[white] rounded-md p-4 text-center flex items-center justify-center">
+              Register
             </button>
           </div>
-        </form>
+        </div>
 
-        <p className="mt-10 text-center text-sm text-gray-500">
-          Already have an account?{" "}
-          <a
-            href="#"
-            className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
-          >
-            Sign in here
-          </a>
-        </p>
+        <div className="w-full flex items-center justify-center mt-4 md:mt-0">
+          <p className="text-sm font-normal text-magenta">Do not have an account?  <span className="font-semibold underline underline-offset-2 cursor-pointer">Sign up for free</span></p>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Signup;
+export default Login;

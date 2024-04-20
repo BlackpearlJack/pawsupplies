@@ -11,6 +11,20 @@ export default {
 
     },
     extend: {
+      animation: {
+        fadeIn: 'fadeIn 2s ease-in-out',
+        slideIn: 'slideIn 2s ease-in-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideIn: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+      },
       gridTemplateRows: {
         '[auto,auto,1fr]': 'auto auto 1fr',
       },
