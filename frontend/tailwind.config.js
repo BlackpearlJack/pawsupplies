@@ -2,6 +2,9 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      'poppins': ['Poppins', 'sans-serif'],
+    },
     colors: {
       'dark-magenta': '#38023b',
       'magenta': '#7e0585',

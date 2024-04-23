@@ -39,7 +39,7 @@ app.use('/images/', express.static('upload/images')) // corrected line
 app.post("/upload",upload.single('product'),(req,res)=>{
     res.json({
         success: 1,
-        profile_url: `http://localhost:${port}/images/${req.file.filename}`
+        image_url: `http://localhost:${port}/images/${req.file.filename}`
     })
 })
 
