@@ -1,13 +1,24 @@
-import Navbar from "./Components/Navbar/Navbar"
-import Admin from "./Pages/Admin/Admin"
+import {ColorModeContext, useMode} from "./theme.js";
+import {CssBaseline, ThemeProvider} from "@mui/material";
+import Topbar from "./scenes/global/Topbar.jsx";
+import Sidebar from "./scenes/global/Sidebar.jsx";
 
 
-const App = () => {
+function App() {
+    const [theme, colorMode] = useMode();
+
   return (
-    <div>
-      <Navbar />
-      <Admin />
-    </div>
+      <ColorModeContext.Provider value={colorMode}>
+          <ThemeProvider theme={theme}>
+              <CssBaseline />
+              <div className="app">
+                  <Sidebar />
+                  <main className="content">
+                      <Topbar />
+                  </main>
+              </div>
+          </ThemeProvider>
+      </ColorModeContext.Provider>
   )
 }
 
