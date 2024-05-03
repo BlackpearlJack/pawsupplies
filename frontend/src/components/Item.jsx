@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import PropTypes from "prop-types";
+
 
 const Item = (props) => {
   return (
@@ -24,13 +24,6 @@ const Item = (props) => {
   )
 }
 
-Item.propTypes = {
-  id: PropTypes.number.isRequired,
-  image: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  old_price: PropTypes.number.isRequired,
-  new_price: PropTypes.number.isRequired,
-};
+
 
 export default Item

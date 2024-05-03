@@ -1,11 +1,11 @@
-import { Fragment, useState } from 'react'
+import {Fragment, useContext, useState} from 'react'
 import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
-import PropTypes from 'prop-types';
-import all_products from "../constants/all_products"
 import Item from '../components/Item';
 import Banner from '../components/Banner';
+//import all_products from "../constants/all_products.js";
+import {ShopContext} from "../Context/ShopContext.jsx";
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
@@ -64,6 +64,7 @@ function classNames(...classes) {
 }
 
 const ShopCategory = (props) => {
+  const {all_product} = useContext(ShopContext);
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
   return (
@@ -311,11 +312,12 @@ const ShopCategory = (props) => {
               <div className="bg-white">
                 <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
                   <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                    {all_products.map((item,i) => {
+                    {all_product.map((item,i) => {
                       if(props.category === item.category){
+                        const shortDescription = item.description.substring(0, 100); // Adjust 100 to the number of characters you want
                         return <Item key={i} id={item.id} name={item.name}
-                        image={item.image} description={item.description}
-                        new_price={item.new_price} old_price={item.old_price}/>
+                                     image={item.image} description={shortDescription + "..."}
+                                     new_price={item.new_price} old_price={item.old_price}/>
                       }
                     })}
                   </div>
@@ -331,9 +333,5 @@ const ShopCategory = (props) => {
   )
 }
 
-ShopCategory.propTypes = {
-  banner: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-};
 
 export default ShopCategory;

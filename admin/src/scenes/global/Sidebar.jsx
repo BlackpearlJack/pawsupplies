@@ -16,6 +16,8 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import AddCardOutlinedIcon from '@mui/icons-material/AddCardOutlined';
+import InventoryOutlinedIcon from '@mui/icons-material/InventoryOutlined';
 import images from "../../data/images.js";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
@@ -81,7 +83,7 @@ const Sidebar = () => {
                                 ml="15px"
                             >
                                 <Typography variant="h3" color={colors.grey[100]}>
-                                    ADMIN PANEL
+                                    ADMIN
                                 </Typography>
                                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                                     <MenuOutlinedIcon />
@@ -118,6 +120,7 @@ const Sidebar = () => {
                         </Box>
                     )}
 
+                    {/* MENU ITEMS */}
                     <Box paddingLeft={isCollapsed ? undefined : "10%"}>
                         <Item
                             title="Dashboard"
@@ -127,6 +130,7 @@ const Sidebar = () => {
                             setSelected={setSelected}
                         />
 
+                        {/* data section */}
                         <Typography
                             variant="h6"
                             color={colors.grey[300]}
@@ -142,20 +146,22 @@ const Sidebar = () => {
                             setSelected={setSelected}
                         />
                         <Item
-                            title="Contacts Information"
-                            to="/contacts"
-                            icon={<ContactsOutlinedIcon />}
+                            title="Product Information"
+                            to="/listproduct"
+                            icon={<InventoryOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
                         />
+                        {/*
                         <Item
                             title="Invoices Balances"
                             to="/invoices"
                             icon={<ReceiptOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
-                        />
+                        />*/}
 
+                        {/* pages section */}
                         <Typography
                             variant="h6"
                             color={colors.grey[300]}
@@ -163,13 +169,15 @@ const Sidebar = () => {
                         >
                             Pages
                         </Typography>
+
                         <Item
-                            title="Profile Form"
-                            to="/form"
-                            icon={<PersonOutlinedIcon />}
+                            title="Add Product"
+                            to="/addproduct"
+                            icon={<AddCardOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
                         />
+                        {/*<Item
                         <Item
                             title="Calendar"
                             to="/calendar"
@@ -183,8 +191,9 @@ const Sidebar = () => {
                             icon={<HelpOutlineOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
-                        />
+                        />*/}
 
+                        {/* charts section
                         <Typography
                             variant="h6"
                             color={colors.grey[300]}
@@ -219,7 +228,7 @@ const Sidebar = () => {
                             icon={<MapOutlinedIcon />}
                             selected={selected}
                             setSelected={setSelected}
-                        />
+                        />*/}
                     </Box>
                 </Menu>
             </ProSidebar>

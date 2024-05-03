@@ -1,7 +1,6 @@
 import { HomeIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 
@@ -21,7 +20,7 @@ const Breadcrum = (props) => {
                     <ChevronRightIcon className="flex-shrink-0 h-5 w-5 text-gray-blue" aria-hidden="true" />
                 </li>
                 <li>
-                    <Link to="/shop"><span className="text-gray-blue">Shop</span></Link>
+                    <Link to="/"><span className="text-gray-blue">Shop</span></Link>
                 </li>
                 <li>
                     <Link><FontAwesomeIcon icon={faAngleRight} className="mx-2 text-gray-blue" /></Link>
@@ -41,11 +40,5 @@ const Breadcrum = (props) => {
     );
 };
 
-Breadcrum.propTypes = {
-    product: PropTypes.shape({
-        category: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-    }).isRequired,
-};
 
 export default Breadcrum;

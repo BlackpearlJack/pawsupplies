@@ -56,9 +56,20 @@ const Navbar = () => {
           </Link>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link to="/loginsignup" className="text-sm font-semibold leading-6 text-gray-blue">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </Link>
+            {
+                localStorage.getItem('auth-token')?<button
+                className="text-sm font-semibold leading-6 text-gray-blue"
+                        onClick={() => {
+                    localStorage.removeItem('auth-token');
+                    window.location.replace('/')}
+                }>
+                        Logout
+                </button> :
+                <Link to="/loginsignup" className="text-sm font-semibold leading-6 text-gray-blue">
+                    Log in <span aria-hidden="true">&rarr;</span>
+                </Link>
+            }
+
         </div>
         <div className="ml-auto flex items-center">
             {/* Search */}
@@ -132,12 +143,20 @@ const Navbar = () => {
                 </Link>
               </div>
               <div className="py-6">
-                <Link
-                  to="/loginsignup"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-blue hover:bg-magenta"
-                >
-                  Log in
-                </Link>
+                  {localStorage.getItem('auth-token')?<button
+                      className="text-sm font-semibold leading-6 text-gray-blue"
+                      onClick={() => {
+                          localStorage.removeItem('auth-token');
+                          window.location.replace('/')}
+                      }>
+                      Logout
+                  </button> : <Link
+                      to="/loginsignup"
+                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-blue hover:bg-magenta"
+                  >
+                      Log in
+                  </Link>
+                  }
               </div>
             </div>
           </div>

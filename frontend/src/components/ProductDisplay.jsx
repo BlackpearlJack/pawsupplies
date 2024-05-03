@@ -1,7 +1,6 @@
 import { useContext, /*useState*/} from "react";
 import { ShopContext } from "../Context/ShopContext";
 import { StarIcon } from '@heroicons/react/20/solid'
-import PropTypes from "prop-types";
 //import { RadioGroup } from "@headlessui/react";
 
 const products = {
@@ -165,18 +164,5 @@ const ProductDisplay = (props) => {
     </div>
     )
 }
-
-ProductDisplay.propTypes = {
-    product: PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        image: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        old_price: PropTypes.number.isRequired,
-        new_price: PropTypes.number.isRequired,
-        // Add more prop types for other properties of the product object
-    }).isRequired,
-};
-
 
 export default ProductDisplay
