@@ -20,7 +20,7 @@ const Popular = () => {
             <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
                 {popular.map((item, i) => {
                     const shortDescription = item.description.substring(0, 100);
-                    <Item key={i} id={item.id} name={item.name}
+                    return <Item key={i} id={item.id} name={item.name}
                     image={item.image} description={shortDescription + "..."}
                     new_price={item.new_price} old_price={item.old_price}/>
                 })}
