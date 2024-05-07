@@ -18,11 +18,12 @@ const Popular = () => {
             <h2 className="text-7xl font-bold text-dark-magenta tracking-tight text-center">Popular Products</h2>
             <hr className="w-full h-6 text-dark-magenta"/>
             <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-                {popular.map((item, i) => (
+                {popular.map((item, i) => {
+                    const shortDescription = item.description.substring(0, 100);
                     <Item key={i} id={item.id} name={item.name}
-                    image={item.image} description={item.description}
+                    image={item.image} description={shortDescription + "..."}
                     new_price={item.new_price} old_price={item.old_price}/>
-                ))}
+                })}
             </div>
         </div>
     </div>
