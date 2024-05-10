@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const Item = (props) => {
   return (
     <div className="group relative">
-      <div className="aspect-h-1 aspect-w-1 w-ful overflow-hidden rounded-md bg-gray-magenta lg:aspect-none group-hover:opacity-75 lg:h-80">
+      <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-magenta lg:aspect-none group-hover:opacity-75 lg:h-80">
         <Link to={`/product/${props.id}`}><img onClick={window.scrollTo(0,0)} src={props.image} alt="product one" className="h-full w-full object-cover object-center lg:h-full lg:w-full" /></Link>
       </div>
       <div className="mt-4 flex justify-between">
