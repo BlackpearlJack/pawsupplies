@@ -13,11 +13,11 @@ const argon2 = require('argon2');
 
 app.use(express.json());
 app.use(cors());
+
 // Database connection with MongoDB
 mongoose.connect("mongodb+srv://lestercarlyle:N1kl%40us99@cluster0.c2zbmo6.mongodb.net/pawsupplies");
 
 // API creation
-
 app.get("/",(req,res)=>{
     res.send("Express App is running");
 })
@@ -86,7 +86,6 @@ const Product = mongoose.model("Product",{
 })
 
 // Creating API for adding products
-
 app.post("/addproduct",async(req,res)=>{
     let products = await Product.find({});
     let id;
@@ -122,7 +121,6 @@ app.post("/addproduct",async(req,res)=>{
 })
 
 // Creatin API for deleting a product
-
 app.post("/removeproduct", async (req,res) => {
     await Product.findOneAndDelete({id:req.body.id});
     console.log("Product deleted successfully");
@@ -133,7 +131,6 @@ app.post("/removeproduct", async (req,res) => {
 })
 
 // Creating API for getting all products
-
 app.get("/allproducts", async (req,res)=>{
     let products = await Product.find({});
     console.log("All products fetched successfully");
@@ -141,7 +138,6 @@ app.get("/allproducts", async (req,res)=>{
 })
 
 // Schema for User model
-
 const Users = mongoose.model("Users",{
     name:{
         type: String,

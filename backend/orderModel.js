@@ -11,8 +11,8 @@ const orderSchema = mongoose.Schema({
                 type:mongoose.Schema.Types.ObjectId,
                 required: true,
                 ref: "Product",
-
-        },
+            },
+        }
     ],
 
     shippingAddress: {
@@ -30,7 +30,7 @@ const orderSchema = mongoose.Schema({
    paymentResult: {
     id: {type: String},
     status: {type: String},
-    update_time: {type, String},
+    update_time: {type: String},
     email_address:{type: String},
    },
 
